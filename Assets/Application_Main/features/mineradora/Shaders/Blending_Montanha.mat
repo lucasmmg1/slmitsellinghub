@@ -1,0 +1,89 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-934786765697459057
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 7
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Blending_Montanha
+  m_Shader: {fileID: -6465566751694194690, guid: bf8d7f876d5319344b42acba619c9900,
+    type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 2
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _Albedo:
+        m_Texture: {fileID: 2800000, guid: b73385f7f810c554fbf1fb1dd1ce6961, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Blend_Texture:
+        m_Texture: {fileID: 2800000, guid: 64b9938c392a7b34e90c60a51e1208de, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Normal_Map:
+        m_Texture: {fileID: 2800000, guid: ca96e2920b76fc445b0bfdfd9bfe8abe, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Roughness:
+        m_Texture: {fileID: 2800000, guid: 601298336dd2ab2448a3c88faa47c04b, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Terrain_HeightMap:
+        m_Texture: {fileID: 2800000, guid: 77a6986e1cbfee140b51821992e3967f, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _Blend_Noise_Scale: 12.72
+    - _Blend_Noise_Strenght: 0.42
+    - _Blending_Distance: -0.01
+    - _Blending_Tilling: 1.11
+    - _Metalic: -1.13
+    - _Noise_Scale_1: 5.97
+    - _Noise_Scale_2: 5.58
+    - _Normal_Strenght: 0.57
+    - _QueueControl: 0
+    - _QueueOffset: 0
+    - _Smoothness: 0
+    - _Terrain_Height: -0.02
+    m_Colors:
+    - _BlendColor: {r: 0.5471698, g: 0.5471698, b: 0.5471698, a: 0}
+    - _Terrain_Size_Offset: {r: 0, g: 0, b: 0, a: 0}
+  m_BuildTextureStacks: []

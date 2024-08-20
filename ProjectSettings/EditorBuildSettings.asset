@@ -4,11 +4,9 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes:
-  - enabled: 1
-    path: Assets/Application_Main/features/farmacia/Runtime/Scenes/farmacia.unity
-    guid: f4b27066084da674e86ec1ee065a5d7d
+  m_Scenes: []
   m_configObjects:
-    com.unity.xr.arfoundation.simulation_settings: {fileID: 11400000, guid: aa21da83824ab8343bdeb2e47e25a11a, type: 2}
-    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: bf07d0b78c0e43d41b70cef09a9f8f69, type: 2}
-    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: bba1cddce4ff6db44906cb5b6b466d94, type: 2}
+    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: c78303ff97e9c0b4dba5bb111258a6c9, type: 2}
+    com.unity.xr.arfoundation.simulation_settings: {fileID: 11400000, guid: f6f66f1d591a01848b6065442eecd857, type: 2}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 8aef5db3ff33924498eb3c9162d292d3, type: 2}
+    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 276abd7d1ac22a94696b08daf2ad5514, type: 2}

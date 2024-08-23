@@ -57,7 +57,7 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     - _Vento_Variacao: 1
-    - _Vento_Velocidade: 0.05
+    - _Vento_Velocidade: 0.003
     m_Colors:
     - _Vento_Mov: {r: 0.1, g: 0.1, b: 0, a: 0}
   m_BuildTextureStacks: []

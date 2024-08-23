@@ -140,7 +140,11 @@ PlayerSettings:
   visionOSBundleVersion: 1.0
   tvOSBundleVersion: 1.0
   bundleVersion: 1.0
-  preloadedAssets: []
+  preloadedAssets:
+  - {fileID: 11400000, guid: c677e5c4eb85b7849a8da406775c299d, type: 2}
+  - {fileID: 7065634000165359846, guid: 8aef5db3ff33924498eb3c9162d292d3, type: 2}
+  - {fileID: 11400000, guid: f6f66f1d591a01848b6065442eecd857, type: 2}
+  - {fileID: 8322230418706999751, guid: 276abd7d1ac22a94696b08daf2ad5514, type: 2}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -597,11 +601,11 @@ PlayerSettings:
   m_MobileRenderingPath: 1
   metroPackageName: slmitsellinghub
   metroPackageVersion: 1.0.0.0
-  metroCertificatePath: 
+  metroCertificatePath: Assets/WSATestCertificate.pfx
   metroCertificatePassword: 
-  metroCertificateSubject: 
-  metroCertificateIssuer: 
-  metroCertificateNotAfter: 0000000000000000
+  metroCertificateSubject: DefaultCompany
+  metroCertificateIssuer: DefaultCompany
+  metroCertificateNotAfter: 006869d37214dc01
   metroApplicationDescription: slmitsellinghub
   wsaImages: {}
   metroTileShortName: slmitsellinghub

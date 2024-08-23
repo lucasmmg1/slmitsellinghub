@@ -4,7 +4,10 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Application_Main/features/fazenda/Runtime/Scenes/fazenda.unity
+    guid: 9e0b3a89b0373804a9ad913b62676abe
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: c78303ff97e9c0b4dba5bb111258a6c9, type: 2}
     com.unity.xr.arfoundation.simulation_settings: {fileID: 11400000, guid: f6f66f1d591a01848b6065442eecd857, type: 2}

@@ -49,7 +49,7 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     - _Vento_Variacao: 1
-    - _Vento_Velocidade: 0.01
+    - _Vento_Velocidade: 0.001
     m_Colors:
     - _Cor: {r: 0.45283014, g: 0.45283014, b: 0.45283014, a: 0}
     - _Cor_2: {r: 0.8588236, g: 0.76470596, b: 0.635294, a: 1}

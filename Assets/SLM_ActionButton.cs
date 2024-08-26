@@ -57,10 +57,10 @@ namespace slmit.sellinghub.bs
             if (!button.enabled) return;
             
             button.enabled = false;
-            click.SetActive(true);
-            hover.SetActive(false);
-            animator.Play(clickAnimationClip.name);
-            eventToExecute?.Invoke();
+            //click.SetActive(true);
+            //hover.SetActive(false);
+            //animator.Play(clickAnimationClip.name);
+            //eventToExecute?.Invoke();
             Invoke(nameof(Reset), animationDuration);
         }
 
@@ -70,9 +70,9 @@ namespace slmit.sellinghub.bs
 
         protected void Reset()
         {
-            idle.SetActive(true);
-            click.SetActive(false);
-            animator.Play(idleAnimationClip.name);
+            //idle.SetActive(true);
+            //click.SetActive(false);
+            //animator.Play(idleAnimationClip.name);
             button.enabled = true;
         }
 

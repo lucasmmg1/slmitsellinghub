@@ -7,4 +7,8 @@ public class SceneController : MonoBehaviour
     {
         SceneManager.LoadScene(sceneIndex);
     }
+    public void LoadScene (string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
+    }
 }

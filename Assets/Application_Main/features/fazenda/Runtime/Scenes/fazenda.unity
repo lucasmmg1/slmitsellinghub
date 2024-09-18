@@ -23132,7 +23132,7 @@ GameObject:
   m_IsActive: 1
 --- !u!114 &1080433541
 MonoBehaviour:
-  m_ObjectHideFlags: 10
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -47472,7 +47472,7 @@ GameObject:
   - component: {fileID: 2055083785}
   - component: {fileID: 2055083784}
   m_Layer: 0
-  m_Name: _interactionZone
+  m_Name: scenario
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

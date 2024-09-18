@@ -1,0 +1,95 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: seguranca-mat_chama
+  m_Shader: {fileID: -6465566751694194690, guid: 1dba3e15dd846b74d91f215a6728c4f0, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 2
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _Alpha: 1
+    - _Alpha_A: 0.5
+    - _Alpha_B: 0.48
+    - _Altura_Chama: -1.22
+    - _Altura_Degrade: -2.51
+    - _Edge_1: -0.03
+    - _Edge_2: 0.04
+    - _FP1: 2.4
+    - _Fresnel_Power: 1.5
+    - _IntensidadeFP: 67.98
+    - _Intensidade_Deformer: 6.32
+    - _IntersectionStrenght: 50
+    - _Mult: 4.47
+    - _Mult2: 12.42
+    - _Mult3: 427.8
+    - _Noise_Scale: 25
+    - _QueueControl: 0
+    - _QueueOffset: 0
+    - _S: 0.22
+    - _Suave_Degrade: 3.27
+    - _Sub: 0.04
+    - _T: 0.13
+    - _Velocidade_Chama: 2
+    - _Wave_Speed: 1
+    - _Wave_Strenght: 1
+    - _edg1: -0.04
+    - _edg2: 5.03
+    - _edg3: -0.47
+    - _edg4: 5.16
+    - _edg5: 15.1
+    - _edg6: 16.05
+    - _lerp: -37.09
+    m_Colors:
+    - _Chama_Baixo: {r: 0, g: 0.11642933, b: 1, a: 0}
+    - _Chama_Bot: {r: 0.023584902, g: 0.4573169, b: 1, a: 0}
+    - _Chama_Top: {r: 0.54901963, g: 0.22352941, b: 1, a: 0}
+    - _Chama_Topo: {r: 1, g: 0, b: 0, a: 0}
+    - _Cor: {r: 0.3058824, g: 1.309804, b: 1.498039, a: 0}
+    - _Cor_Chama: {r: 1, g: 0.54973066, b: 0, a: 0}
+    - _Cor_E_Baixo: {r: 2.295228, g: 0.6818726, b: 0.27066365, a: 0}
+    - _Cor_E_Topo: {r: 0, g: 1.7450429, b: 5.111887, a: 0}
+    - _Cor_Emissao: {r: 0.15686274, g: 0.22466385, b: 0.74901956, a: 0}
+  m_BuildTextureStacks: []
+--- !u!114 &3903485393427063164
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 7

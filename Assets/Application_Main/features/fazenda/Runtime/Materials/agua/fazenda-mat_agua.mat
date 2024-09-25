@@ -58,7 +58,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Deph: 0.2
+    - _Deph: 0.14
     - _Metalic: 0.566
     - _Normal_1_Strenght: 1.05
     - _Normal_2_Strenght: 1.09
@@ -66,10 +66,10 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     - _Smoothness: 0.912
-    - _Strenght: 4.03
+    - _Strenght: 3.99
     - _Velocidade: 80
     m_Colors:
-    - _Fundo: {r: 0.38431367, g: 0.4078431, b: 0.49803907, a: 1}
+    - _Fundo: {r: 0.17673846, g: 0.17181383, b: 0.31132078, a: 1}
     - _Normal_TIlling: {r: 5, g: 5, b: 0, a: 0}
-    - _Raso: {r: 0.5367569, g: 0.62319773, b: 0.6981132, a: 1}
+    - _Raso: {r: 0.54432184, g: 0.6977138, b: 0.8301887, a: 1}
   m_BuildTextureStacks: []

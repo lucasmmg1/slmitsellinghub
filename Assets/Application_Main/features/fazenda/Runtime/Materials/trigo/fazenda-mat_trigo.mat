@@ -24,7 +24,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _Albedo:
-        m_Texture: {fileID: 2800000, guid: df43e9ba2d5a01c47b12c6bf3af7b400, type: 3}
+        m_Texture: {fileID: 2800000, guid: 761720221d60a4a4abb212cff3b7d20e, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Alpha:
@@ -59,6 +59,7 @@ Material:
     - _Vento_Variacao: 1
     - _Vento_Velocidade: 0.003
     m_Colors:
+    - _Color: {r: 0.8113208, g: 0.8113208, b: 0.8113208, a: 1}
     - _Vento_Mov: {r: 0.1, g: 0.1, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &8502984105641187159

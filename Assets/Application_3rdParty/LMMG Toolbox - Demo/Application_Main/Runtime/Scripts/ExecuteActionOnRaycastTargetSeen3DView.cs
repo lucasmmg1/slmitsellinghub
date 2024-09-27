@@ -12,29 +12,21 @@ public class ExecuteActionOnRaycastTargetSeen3DView : MonoBehaviour
 
     #region Protected Variables
 
-    [SerializeField] [TagSelector] protected string[] tagsToCollide;
+    [SerializeField] [TagSelector] protected string[] targetsTags;
     [SerializeField] protected float hybridUpdateRate = 0.1f;
-    [SerializeField] protected bool debugRay, lookBehindObjects;
+    [SerializeField] protected bool debugRay;
     [SerializeField] protected Transform raycastOrigin;
     [SerializeField] protected Color debugRayColor;
     [SerializeField] protected LayerMask layerMaskToCheckForRaycastTarget;
-    [SerializeField] protected UnityEvent<RaycastHit> eventToExecuteWhenRaycastTargetFound;
-    [SerializeField] protected UnityEvent<RaycastHit> eventToExecuteWhenRaycastTargetLost;
+    [SerializeField] protected UnityEvent<RaycastHit> eventToExecuteWhenRaycastTargetFound, eventToExecuteWhenRaycastTargetLost;
+    [SerializeField] protected UnityEvent eventToExecuteIfRaycastTargetNotFound;
     [SerializeField] protected TransformDirections raycastDirection;
     [SerializeField] protected QueryTriggerInteraction queryTriggerInteraction;
     [SerializeField] protected RaycastType raycastType;
     [SerializeField] protected float maxRaycastDistance;
     [SerializeField] protected Vector3 boxcastSize;
-    protected Vector3 raycastOriginPosition;
-    protected List<RaycastHit> raycastHits;
-    protected bool isSeeingTarget;
+    protected List<RaycastHit> previousHits, currentHits;
     
-    #endregion
-
-    #region Public Variables
-
-    public bool IsSeeingTarget => isSeeingTarget;
-
     #endregion
 
     #endregion
@@ -45,17 +37,20 @@ public class ExecuteActionOnRaycastTargetSeen3DView : MonoBehaviour
 
     protected void OnEnable()
     {
-        raycastHits = new List<RaycastHit>();
+        previousHits = new List<RaycastHit>();
+        currentHits = new List<RaycastHit>();
+        
         StartCoroutine(HybridUpdate());
     }
-
     protected void OnDisable()
     {
-        raycastHits.Clear();
+        previousHits.Clear();
+        currentHits.Clear();
+        
         StopAllCoroutines();
     }
 
-#if UNITY_EDITOR
+/*#if UNITY_EDITOR
     protected void OnDrawGizmos()
     {
         if (!debugRay) return;
@@ -83,48 +78,69 @@ public class ExecuteActionOnRaycastTargetSeen3DView : MonoBehaviour
                 throw new ArgumentOutOfRangeException();
         }
     }
-#endif
+#endif*/
 
     protected IEnumerator HybridUpdate()
     {
         yield return new WaitForSeconds(hybridUpdateRate + 0.01f);
+        
+        previousHits = currentHits.Except(GetHits()).ToList();
+        currentHits = GetHits().ToList();
 
-        raycastHits.Clear();
-        raycastOriginPosition = raycastOrigin.position;
-        raycastHits = raycastType switch
+        if (previousHits.Count > 0)
         {
-            RaycastType.Line => Physics.RaycastAll(raycastOriginPosition, transform.GetTransformDirection(raycastDirection), maxRaycastDistance, layerMaskToCheckForRaycastTarget, queryTriggerInteraction).ToList(),
-            RaycastType.Box => Physics.BoxCastAll(new Vector3(raycastOriginPosition.x + boxcastSize.x / 2 * transform.GetTransformDirection(raycastDirection).x, raycastOriginPosition.y, raycastOriginPosition.z + boxcastSize.z / 2 * transform.GetTransformDirection(raycastDirection).z), boxcastSize / 2f, transform.GetTransformDirection(raycastDirection), transform.rotation, 1, layerMaskToCheckForRaycastTarget, queryTriggerInteraction).ToList(),
-            _ => throw new ArgumentOutOfRangeException()
-        };
-
-        foreach (var raycastHit in raycastHits)
+            foreach (var previousHit in previousHits)
+                eventToExecuteWhenRaycastTargetLost?.Invoke(previousHit);
+        }
+        else
         {
-            if (raycastHit.collider == null) continue;
-
-            foreach (var tagToCollide in tagsToCollide)
-            {
-                var objectFoundInFront = Physics.Raycast(raycastOriginPosition, transform.GetTransformDirection(raycastDirection), Vector3.Distance(raycastOriginPosition, raycastHit.collider.transform.position), layerMaskToCheckForRaycastTarget, queryTriggerInteraction);
-
-                switch (lookBehindObjects)
-                {
-                    case true when raycastHit.collider.CompareTag(tagToCollide):
-                        eventToExecuteWhenRaycastTargetFound?.Invoke(raycastHit);
-                        isSeeingTarget = true;
-                        goto endOfMethod;
-                    case false when raycastHit.collider.CompareTag(tagToCollide) && !objectFoundInFront:
-                        eventToExecuteWhenRaycastTargetFound?.Invoke(raycastHit);
-                        isSeeingTarget = true;
-                        goto endOfMethod;
-                }
-            }
+            
+        }
+        if (currentHits.Count > 0)
+        {
+            foreach (var currentHit in currentHits)
+                eventToExecuteWhenRaycastTargetFound?.Invoke(currentHit);
+        }
+        else
+        {
+            eventToExecuteIfRaycastTargetNotFound?.Invoke();
         }
         
-        eventToExecuteWhenRaycastTargetLost?.Invoke();
-        isSeeingTarget = false;
-        
-        endOfMethod:
         StartCoroutine(HybridUpdate());
+    }
+
+    protected IEnumerable<RaycastHit> GetHits()
+    {
+        return raycastType switch
+        {
+            RaycastType.Line => GetLineCastHits(),
+            RaycastType.Box => GetBoxCastHits(),
+            _ => throw new ArgumentOutOfRangeException()
+        };
+    }
+    protected IEnumerable<RaycastHit> GetLineCastHits()
+    {
+        return Physics.RaycastAll
+        (
+            raycastOrigin.position,
+            transform.GetTransformDirection(raycastDirection),
+            maxRaycastDistance,
+            layerMaskToCheckForRaycastTarget,
+            queryTriggerInteraction
+        ).Where(hit => targetsTags.Contains(hit.collider.tag));
+    }
+    protected IEnumerable<RaycastHit> GetBoxCastHits()
+    {
+        return Physics.BoxCastAll
+        (
+            new Vector3(raycastOrigin.position.x + boxcastSize.x / 2 * transform.GetTransformDirection(raycastDirection).x, raycastOrigin.position.y, raycastOrigin.position.z + boxcastSize.z / 2 * transform.GetTransformDirection(raycastDirection).z),
+            boxcastSize / 2f, 
+            transform.GetTransformDirection(raycastDirection),
+            transform.rotation, 
+            1, 
+            layerMaskToCheckForRaycastTarget, 
+            queryTriggerInteraction
+        ).Where(hit => targetsTags.Contains(hit.collider.tag));
     }
 
     #endregion

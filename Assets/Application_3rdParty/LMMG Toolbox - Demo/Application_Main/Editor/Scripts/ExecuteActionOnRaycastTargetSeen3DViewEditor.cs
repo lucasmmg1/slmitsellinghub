@@ -12,7 +12,7 @@ public class ExecuteActionOnRaycastTargetSeen3DViewEditor : Editor
 
     #region Protected Variables
 
-    protected SerializedProperty tagsToCollide, hybridUpdateRate, debugRay, lookBehindObjects, raycastOrigin, debugRayColor, layerMaskToCheckForRaycastTarget, eventToExecuteIfRaycastFoundTarget, eventToExecuteIfRaycastNotFoundTarget, raycastDirection, queryTriggerInteraction, raycastType, maxRaycastDistance, boxcastSize;
+    protected SerializedProperty targetsTags, hybridUpdateRate, debugRay, raycastOrigin, debugRayColor, layerMaskToCheckForRaycastTarget, eventToExecuteWhenRaycastTargetFound, eventToExecuteWhenRaycastTargetLost, eventToExecuteIfRaycastTargetNotFound, raycastDirection, queryTriggerInteraction, raycastType, maxRaycastDistance, boxcastSize;
 
     protected bool advancedSettingsFoldout;
 
@@ -59,20 +59,19 @@ public class ExecuteActionOnRaycastTargetSeen3DViewEditor : Editor
 
     protected virtual void SetupTagsToCollide()
     {
-        tagsToCollide = serializedObject.FindProperty("tagsToCollide");
+        targetsTags = serializedObject.FindProperty("targetsTags");
     }
 
     protected virtual void ShowTagsToCollide()
     {
         EditorGUI.indentLevel++;
-        EditorGUILayout.PropertyField(tagsToCollide, new GUIContent("Tag to collide with: ", "The tag of the object to collide with."));
+        EditorGUILayout.PropertyField(targetsTags, new GUIContent("Tag to collide with: ", "The tag of the object to collide with."));
         EditorGUI.indentLevel--;
     }
 
     protected virtual void SetupRaycastSettings()
     {
         debugRay = serializedObject.FindProperty("debugRay");
-        lookBehindObjects = serializedObject.FindProperty("lookBehindObjects");
         raycastOrigin = serializedObject.FindProperty("raycastOrigin");
         debugRayColor = serializedObject.FindProperty("debugRayColor");
         layerMaskToCheckForRaycastTarget = serializedObject.FindProperty("layerMaskToCheckForRaycastTarget");
@@ -91,8 +90,7 @@ public class ExecuteActionOnRaycastTargetSeen3DViewEditor : Editor
             EditorGUILayout.PropertyField(debugRayColor, new GUIContent("Debug ray color", "The color of the debug ray."));
         EditorGUILayout.Space();
         EditorGUILayout.Space();
-
-        EditorGUILayout.PropertyField(lookBehindObjects, new GUIContent("Look behind objects?", "Check this option to make the object look behind objects."));
+        
         EditorGUILayout.PropertyField(raycastOrigin, new GUIContent("Raycast origin", "The origin of the ray."));
         EditorGUILayout.PropertyField(raycastDirection, new GUIContent("Raycast direction", "The direction of the ray."));
         EditorGUILayout.PropertyField(queryTriggerInteraction, new GUIContent("Query trigger interaction", "The query trigger interaction."));
@@ -119,15 +117,17 @@ public class ExecuteActionOnRaycastTargetSeen3DViewEditor : Editor
 
     protected virtual void SetupEvents()
     {
-        eventToExecuteIfRaycastFoundTarget = serializedObject.FindProperty("eventToExecuteIfRaycastFoundTarget");
-        eventToExecuteIfRaycastNotFoundTarget = serializedObject.FindProperty("eventToExecuteIfRaycastNotFoundTarget");
+        eventToExecuteWhenRaycastTargetFound = serializedObject.FindProperty("eventToExecuteWhenRaycastTargetFound");
+        eventToExecuteWhenRaycastTargetLost = serializedObject.FindProperty("eventToExecuteWhenRaycastTargetLost");
+        eventToExecuteIfRaycastTargetNotFound = serializedObject.FindProperty("eventToExecuteIfRaycastTargetNotFound");
     }
 
     protected virtual void ShowEvents()
     {
         EditorGUI.indentLevel++;
-        EditorGUILayout.PropertyField(eventToExecuteIfRaycastFoundTarget, new GUIContent("Event to execute if raycast target found is true: ", "The event to execute if raycast target found is true."));
-        EditorGUILayout.PropertyField(eventToExecuteIfRaycastNotFoundTarget, new GUIContent("Event to execute if raycast target found is false: ", "The event to execute if raycast target found is false."));
+        EditorGUILayout.PropertyField(eventToExecuteWhenRaycastTargetFound, new GUIContent("Event to execute when raycast found", "The event to execute if raycast target found is true."));
+        EditorGUILayout.PropertyField(eventToExecuteWhenRaycastTargetLost, new GUIContent("Event to execute when raycast lost", "The event to execute if raycast target found is false."));
+        EditorGUILayout.PropertyField(eventToExecuteIfRaycastTargetNotFound, new GUIContent("Event to execute if raycast target found is false", "The event to execute if raycast target found is false."));
         EditorGUI.indentLevel--;
     }
 

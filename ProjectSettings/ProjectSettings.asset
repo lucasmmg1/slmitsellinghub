@@ -139,8 +139,13 @@ PlayerSettings:
   loadStoreDebugModeEnabled: 0
   visionOSBundleVersion: 1.0
   tvOSBundleVersion: 1.0
-  bundleVersion: 1.7
-  preloadedAssets: []
+  bundleVersion: 2.1
+  preloadedAssets:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -599,14 +604,14 @@ PlayerSettings:
   apiCompatibilityLevelPerPlatform: {}
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: slmitsellinghub
-  metroPackageVersion: 1.0.0.0
+  metroPackageName: com.slmitinnovationtechnology.slmitsellinghub
+  metroPackageVersion: 2.2.0.0
   metroCertificatePath: Assets/WSATestCertificate.pfx
-  metroCertificatePassword: 
-  metroCertificateSubject: DefaultCompany
-  metroCertificateIssuer: DefaultCompany
-  metroCertificateNotAfter: 006869d37214dc01
-  metroApplicationDescription: slmitsellinghub
+  metroCertificatePassword: =<><?<8<
+  metroCertificateSubject: SLMIT Innovation & Technology.
+  metroCertificateIssuer: SLMIT Innovation & Technology.
+  metroCertificateNotAfter: 805a00615e32dc01
+  metroApplicationDescription: A selling hub for thje SLMIT solutions.
   wsaImages: {}
   metroTileShortName: slmitsellinghub
   metroTileShowName: 0
@@ -626,7 +631,8 @@ PlayerSettings:
       GazeInput: True
       SpatialPerception: True
       WebCam: True
-  metroTargetDeviceFamilies: {}
+  metroTargetDeviceFamilies:
+    Holographic: True
   metroFTAName: 
   metroFTAFileTypes: []
   metroProtocolName: 

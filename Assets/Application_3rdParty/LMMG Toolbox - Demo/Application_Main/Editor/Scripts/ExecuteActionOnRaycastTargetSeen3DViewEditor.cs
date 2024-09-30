@@ -1,4 +1,3 @@
-/*
 #if UNITY_EDITOR
 
 using System;
@@ -163,4 +162,3 @@ public class ExecuteActionOnRaycastTargetSeen3DViewEditor : Editor
 }
 
 #endif
-*/

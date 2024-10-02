@@ -7,7 +7,7 @@ QualitySettings:
   m_CurrentQuality: 0
   m_QualitySettings:
   - serializedVersion: 3
-    name: Very Low
+    name: Defaullt
     pixelLightCount: 0
     shadows: 0
     shadowResolution: 0
@@ -18,11 +18,11 @@ QualitySettings:
     shadowCascade2Split: 0.33333334
     shadowCascade4Split: {x: 0.06666667, y: 0.2, z: 0.46666667}
     shadowmaskMode: 0
-    skinWeights: 2
-    globalTextureMipmapLimit: 1
+    skinWeights: 1
+    globalTextureMipmapLimit: 3
     textureMipmapLimitSettings: []
     anisotropicTextures: 0
-    antiAliasing: 0
+    antiAliasing: 2
     softParticles: 0
     softVegetation: 0
     realtimeReflectionProbes: 0
@@ -31,8 +31,8 @@ QualitySettings:
     vSyncCount: 0
     realtimeGICPUUsage: 25
     lodBias: 0.3
-    maximumLODLevel: 0
-    enableLODCrossFade: 1
+    maximumLODLevel: 2
+    enableLODCrossFade: 0
     streamingMipmapsActive: 0
     streamingMipmapsAddAllCameras: 1
     streamingMipmapsMemoryBudget: 512
@@ -44,7 +44,7 @@ QualitySettings:
     asyncUploadBufferSize: 16
     asyncUploadPersistentBuffer: 1
     resolutionScalingFixedDPIFactor: 1
-    customRenderPipeline: {fileID: 0}
+    customRenderPipeline: {fileID: 11400000, guid: 61c66fdbebc70d34da16066011dc4d7e, type: 2}
     terrainQualityOverrides: 0
     terrainPixelError: 1
     terrainDetailDensityScale: 1

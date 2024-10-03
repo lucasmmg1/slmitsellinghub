@@ -6,11 +6,11 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Application_Main/features/fazenda/runtime/scenes/fazenda.unity
-    guid: 9e0b3a89b0373804a9ad913b62676abe
-  - enabled: 1
     path: Assets/Application_Main/base/runtime/scenes/default.unity
     guid: 7507a9707a1ec624bb043dc5e8459f06
+  - enabled: 1
+    path: Assets/Application_Main/features/fazenda/runtime/scenes/fazenda.unity
+    guid: 9e0b3a89b0373804a9ad913b62676abe
   - enabled: 1
     path: Assets/Application_Main/features/mineradora/Scenes/mineradora.unity
     guid: d268f19e21e529346bd212cf9c6dab0b

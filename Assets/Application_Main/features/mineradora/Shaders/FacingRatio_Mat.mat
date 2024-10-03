@@ -21,8 +21,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: FacingRatio_Mat
-  m_Shader: {fileID: -6465566751694194690, guid: 9259842c855487942a1ce3eb877d9bab,
-    type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 9259842c855487942a1ce3eb877d9bab, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -58,13 +57,14 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Facing_strength: 11.44
-    - _Intersection_strength: 41.37
+    - _Facing_strength: 1.2
+    - _Intersection_strength: 3.6
     - _Normal_Forca: 6.83
     - _Normal_Strenght: 1
     - _QueueControl: 0
     - _QueueOffset: 0
+    - _power: 17.1
     m_Colors:
-    - _BaseColor: {r: 0, g: 0, b: 0, a: 0.7294118}
+    - _BaseColor: {r: 0.18556428, g: 0.23591582, b: 0.2830189, a: 0.7294118}
     - _EmissiveColor: {r: 1.4339623, g: 1.4339623, b: 1.4339623, a: 0}
   m_BuildTextureStacks: []

@@ -139,7 +139,7 @@ PlayerSettings:
   loadStoreDebugModeEnabled: 0
   visionOSBundleVersion: 1.0
   tvOSBundleVersion: 1.0
-  bundleVersion: 2.1
+  bundleVersion: 2.2
   preloadedAssets:
   - {fileID: 0}
   - {fileID: 0}
@@ -605,7 +605,7 @@ PlayerSettings:
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
   metroPackageName: com.slmitinnovationtechnology.slmitsellinghub
-  metroPackageVersion: 2.2.10.0
+  metroPackageVersion: 2.2.15.0
   metroCertificatePath: Assets/WSATestCertificate.pfx
   metroCertificatePassword: =<><?<8<
   metroCertificateSubject: SLMIT Innovation & Technology.

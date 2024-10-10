@@ -274,7 +274,7 @@ AnimationClip:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: -0
+        time: 0
         value: 1.21
         inSlope: -0.0057971035
         outSlope: -0.0057971035
@@ -1351,7 +1351,7 @@ AnimationClip:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: -0
+        time: 0
         value: 1.21
         inSlope: -0.0057971035
         outSlope: -0.0057971035

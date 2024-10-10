@@ -58,7 +58,7 @@ Material:
     - _velocidade_brilho: 12
     m_Colors:
     - _Brilho: {r: 0.9724352, g: 0.1406079, b: 0.03210873, a: 0}
-    - _Pos_Corte: {r: 0, g: 0.63, b: 0, a: 0}
+    - _Pos_Corte: {r: 0, g: 0.18, b: 0, a: 0}
     - _Tilling_Dir: {r: 0.49, g: 0, b: 0, a: 0}
     - _Tilling_Esq: {r: -0.49, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []

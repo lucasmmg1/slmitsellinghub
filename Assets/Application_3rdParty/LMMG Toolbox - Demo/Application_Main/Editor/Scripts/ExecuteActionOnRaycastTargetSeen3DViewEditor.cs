@@ -11,9 +11,9 @@ public class ExecuteActionOnRaycastTargetSeen3DViewEditor : Editor
 
     #region Protected Variables
 
-    protected SerializedProperty targetsTags, hybridUpdateRate, debugRay, raycastOrigin, debugRayColor, layerMaskToCheckForRaycastTarget, eventToExecuteWhenRaycastTargetFound, eventToExecuteWhenRaycastTargetLost, eventToExecuteIfRaycastTargetNotFound, raycastDirection, queryTriggerInteraction, raycastType, maxRaycastDistance, boxcastSize;
+    protected SerializedProperty targetsTags, eventConditions, hybridUpdateRate, debugRay, raycastOrigin, debugRayColor, layerMaskToCheckForRaycastTarget, eventToExecuteWhenRaycastTargetFoundAndConditionsTrue, eventToExecuteWhenRaycastTargetFoundAndConditionsFalse, eventToExecuteWhenRaycastTargetLost, eventToExecuteIfRaycastTargetNotFoundAndConditionsTrue, eventToExecuteIfRaycastTargetNotFoundAndConditionsFalse, raycastDirection, queryTriggerInteraction, raycastType, maxRaycastDistance, boxcastSize;
 
-    protected bool advancedSettingsFoldout;
+    protected bool advancedSettingsFoldout, showRaycastTargetFoundEvents, showRaycastTargetNotFoundEvents;
 
     #endregion
 
@@ -31,6 +31,7 @@ public class ExecuteActionOnRaycastTargetSeen3DViewEditor : Editor
     protected virtual void Setup()
     {
         SetupTagsToCollide();
+        SetupConditions();
         SetupRaycastSettings();
         SetupEvents();
         SetupAdvancedSettings();
@@ -40,6 +41,11 @@ public class ExecuteActionOnRaycastTargetSeen3DViewEditor : Editor
     {
         EditorGUILayout.LabelField(new GUIContent("Collision Settings", "Settings related to collision detection."), EditorStyles.boldLabel);
         ShowTagsToCollide();
+        EditorGUILayout.Space();
+        EditorGUILayout.Space();
+        
+        EditorGUILayout.LabelField(new GUIContent("Conditions Settings", "Settings related to conditions."), EditorStyles.boldLabel);
+        ShowConditions();
         EditorGUILayout.Space();
         EditorGUILayout.Space();
 
@@ -65,6 +71,16 @@ public class ExecuteActionOnRaycastTargetSeen3DViewEditor : Editor
     {
         EditorGUI.indentLevel++;
         EditorGUILayout.PropertyField(targetsTags, new GUIContent("Tag to collide with: ", "The tag of the object to collide with."));
+        EditorGUI.indentLevel--;
+    }
+    protected void SetupConditions()
+    {
+        eventConditions = serializedObject.FindProperty("eventConditions");
+    }
+    protected void ShowConditions()
+    {
+        EditorGUI.indentLevel++;
+        EditorGUILayout.PropertyField(eventConditions, new GUIContent("Conditions", "The conditions to check."));
         EditorGUI.indentLevel--;
     }
 
@@ -116,17 +132,39 @@ public class ExecuteActionOnRaycastTargetSeen3DViewEditor : Editor
 
     protected virtual void SetupEvents()
     {
-        eventToExecuteWhenRaycastTargetFound = serializedObject.FindProperty("eventToExecuteWhenRaycastTargetFound");
+        eventToExecuteWhenRaycastTargetFoundAndConditionsTrue = serializedObject.FindProperty("eventToExecuteWhenRaycastTargetFoundAndConditionsTrue");
+        eventToExecuteWhenRaycastTargetFoundAndConditionsFalse = serializedObject.FindProperty("eventToExecuteWhenRaycastTargetFoundAndConditionsFalse");
         eventToExecuteWhenRaycastTargetLost = serializedObject.FindProperty("eventToExecuteWhenRaycastTargetLost");
-        eventToExecuteIfRaycastTargetNotFound = serializedObject.FindProperty("eventToExecuteIfRaycastTargetNotFound");
+        eventToExecuteIfRaycastTargetNotFoundAndConditionsTrue = serializedObject.FindProperty("eventToExecuteIfRaycastTargetNotFoundAndConditionsTrue");
+        eventToExecuteIfRaycastTargetNotFoundAndConditionsFalse = serializedObject.FindProperty("eventToExecuteIfRaycastTargetNotFoundAndConditionsFalse");
     }
 
     protected virtual void ShowEvents()
     {
         EditorGUI.indentLevel++;
-        EditorGUILayout.PropertyField(eventToExecuteWhenRaycastTargetFound, new GUIContent("Event to execute when raycast found", "The event to execute if raycast target found is true."));
-        EditorGUILayout.PropertyField(eventToExecuteWhenRaycastTargetLost, new GUIContent("Event to execute when raycast lost", "The event to execute if raycast target found is false."));
-        EditorGUILayout.PropertyField(eventToExecuteIfRaycastTargetNotFound, new GUIContent("Event to execute if raycast target found is false", "The event to execute if raycast target found is false."));
+        {
+            showRaycastTargetFoundEvents = EditorGUILayout.Foldout(showRaycastTargetFoundEvents, new GUIContent("Events to execute if raycast target found...", "Events to execute when raycast target found."));
+            if (showRaycastTargetFoundEvents)
+            {
+                EditorGUI.indentLevel++;
+                {
+                    EditorGUILayout.PropertyField(eventToExecuteWhenRaycastTargetFoundAndConditionsTrue, new GUIContent("...and conditions true", "The event to execute if raycast target found is true and conditions are true."));
+                    EditorGUILayout.PropertyField(eventToExecuteWhenRaycastTargetFoundAndConditionsFalse, new GUIContent("...and conditions false", "The event to execute if raycast target found is true and conditions are false."));
+                }
+                EditorGUI.indentLevel--;
+            }
+            showRaycastTargetNotFoundEvents = EditorGUILayout.Foldout(showRaycastTargetNotFoundEvents, new GUIContent("Events to execute if raycast target not found...", "Events to execute if raycast target not found."));
+            if (showRaycastTargetNotFoundEvents)
+            {
+                EditorGUI.indentLevel++;
+                {
+                    EditorGUILayout.PropertyField(eventToExecuteIfRaycastTargetNotFoundAndConditionsTrue, new GUIContent("...and conditions true", "The event to execute if raycast target not found and conditions are true."));
+                    EditorGUILayout.PropertyField(eventToExecuteIfRaycastTargetNotFoundAndConditionsFalse, new GUIContent("...and conditions false", "The event to execute if raycast target not found and conditions are false."));
+                }
+                EditorGUI.indentLevel--;
+            } 
+        }
+
         EditorGUI.indentLevel--;
     }
 

@@ -44,14 +44,14 @@ namespace HInteractions
         {
             if (!IsLift)
                 return;
-
+            
             ObjectHolder = null;
-
+            Rigidbody.isKinematic = true;
             Rigidbody.useGravity = true;
             Rigidbody.interpolation = RigidbodyInterpolation.None;
             foreach ((GameObject obj, int defaultLayer) item in _defaultLayers)
                 item.obj.layer = item.defaultLayer;
-
+            Rigidbody.isKinematic = false;
             IsLift = false;
         }
     }

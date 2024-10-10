@@ -3,7 +3,14 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - luvas
+  - capacete
+  - protetor_auricular
+  - mascara_de_solda
+  - mascara_pff2
+  - botas
+  - avental
   layers:
   - Default
   - TransparentFX
@@ -12,6 +19,9 @@ TagManager:
   - Water
   - UI
   - 
+  - Player
+  - Objects
+  - Structures
   - 
   - 
   - 
@@ -22,12 +32,9 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - mangueira
+  - encaixe
+  - macarico
   - 
   - 
   - 

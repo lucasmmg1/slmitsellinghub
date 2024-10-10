@@ -24,9 +24,7 @@ public class ExecuteActionOnConditionView : MonoBehaviour
 
     private IEnumerator ExecuteActionCoroutine()
     {
-        var eventToExecute = ConditionsView.CheckConditions(eventConditions)
-            ? eventToExecuteIfConditionTrue
-            : eventToExecuteIfConditionFalse;
+        var eventToExecute = ConditionsView.CheckConditions(eventConditions) ? eventToExecuteIfConditionTrue : eventToExecuteIfConditionFalse;
         yield return new WaitForSeconds(timerToWaitBeforeExecutingAction);
         eventToExecute?.Invoke();
 

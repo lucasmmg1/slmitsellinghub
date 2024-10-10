@@ -14,13 +14,14 @@ public class ExecuteActionOnRaycastTargetSeen3DView : MonoBehaviour
     #region Protected Variables
 
     [SerializeField] [TagSelector] protected string[] targetsTags;
+    [SerializeField] protected ConditionsView[] eventConditions;
     [SerializeField] protected float hybridUpdateRate = 0.1f;
     [SerializeField] protected bool debugRay;
     [SerializeField] protected Transform raycastOrigin;
     [SerializeField] protected Color debugRayColor;
     [SerializeField] protected LayerMask layerMaskToCheckForRaycastTarget;
-    [SerializeField] protected UnityEvent<RaycastHit> eventToExecuteWhenRaycastTargetFound, eventToExecuteWhenRaycastTargetLost;
-    [SerializeField] protected UnityEvent eventToExecuteIfRaycastTargetNotFound;
+    [SerializeField] protected UnityEvent<RaycastHit> eventToExecuteWhenRaycastTargetFoundAndConditionsTrue, eventToExecuteWhenRaycastTargetFoundAndConditionsFalse, eventToExecuteWhenRaycastTargetLost;
+    [SerializeField] protected UnityEvent eventToExecuteIfRaycastTargetNotFoundAndConditionsTrue, eventToExecuteIfRaycastTargetNotFoundAndConditionsFalse;
     [SerializeField] protected TransformDirections raycastDirection;
     [SerializeField] protected QueryTriggerInteraction queryTriggerInteraction;
     [SerializeField] protected RaycastType raycastType;
@@ -51,12 +52,11 @@ public class ExecuteActionOnRaycastTargetSeen3DView : MonoBehaviour
         StopAllCoroutines();
     }
 
-/*#if UNITY_EDITOR
+#if UNITY_EDITOR
     protected void OnDrawGizmos()
     {
         if (!debugRay) return;
         Gizmos.color = debugRayColor;
-        raycastOriginPosition = raycastOrigin.position;
 
         switch (raycastType)
         {
@@ -68,10 +68,10 @@ public class ExecuteActionOnRaycastTargetSeen3DView : MonoBehaviour
             case RaycastType.Box:
                 Gizmos.DrawWireCube(
                     new Vector3(
-                        raycastOriginPosition.x +
+                        raycastOrigin.position.x +
                         boxcastSize.x / 2 * transform.GetTransformDirection(raycastDirection).x,
-                        raycastOriginPosition.y,
-                        raycastOriginPosition.z +
+                        raycastOrigin.position.y,
+                        raycastOrigin.position.z +
                         boxcastSize.z / 2 * transform.GetTransformDirection(raycastDirection).z), boxcastSize);
                 break;
 
@@ -79,7 +79,7 @@ public class ExecuteActionOnRaycastTargetSeen3DView : MonoBehaviour
                 throw new ArgumentOutOfRangeException();
         }
     }
-#endif*/
+#endif
 
     protected IEnumerator HybridUpdate()
     {
@@ -100,11 +100,15 @@ public class ExecuteActionOnRaycastTargetSeen3DView : MonoBehaviour
         if (currentHits.Count > 0)
         {
             foreach (var currentHit in currentHits)
-                eventToExecuteWhenRaycastTargetFound?.Invoke(currentHit);
+            {
+                var eventToExecute = ConditionsView.CheckConditions(eventConditions) ? eventToExecuteWhenRaycastTargetFoundAndConditionsTrue : eventToExecuteWhenRaycastTargetFoundAndConditionsFalse;
+                eventToExecute?.Invoke(currentHit);
+            }
         }
         else
         {
-            eventToExecuteIfRaycastTargetNotFound?.Invoke();
+            var eventToExecute = ConditionsView.CheckConditions(eventConditions) ? eventToExecuteIfRaycastTargetNotFoundAndConditionsTrue : eventToExecuteIfRaycastTargetNotFoundAndConditionsFalse;
+            eventToExecute?.Invoke();
         }
         
         StartCoroutine(HybridUpdate());

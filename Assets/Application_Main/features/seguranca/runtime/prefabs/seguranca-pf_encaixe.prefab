@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1803238817818021950}
   - component: {fileID: 1667935652722832357}
   - component: {fileID: 3660744317850671368}
-  m_Layer: 0
+  m_Layer: 21
   m_Name: seguranca-pf_encaixe
   m_TagString: Untagged
   m_Icon: {fileID: 0}

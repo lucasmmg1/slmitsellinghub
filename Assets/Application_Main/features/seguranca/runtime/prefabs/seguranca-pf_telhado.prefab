@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2222274296757996772}
   - component: {fileID: 9219255372307233170}
   - component: {fileID: 8169383858312598390}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: seguranca-pf_telhado
   m_TagString: Untagged
   m_Icon: {fileID: 0}

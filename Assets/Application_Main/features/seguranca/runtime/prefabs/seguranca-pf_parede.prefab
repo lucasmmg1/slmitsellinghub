@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7190703768504089105}
   - component: {fileID: 7281419563460602204}
   - component: {fileID: -4167882874516480832}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: seguranca-pf_parede
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -103,6 +103,6 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 8342159127421523248, guid: 6d7501d2fc9d76e4e8b938f5993aab83, type: 3}

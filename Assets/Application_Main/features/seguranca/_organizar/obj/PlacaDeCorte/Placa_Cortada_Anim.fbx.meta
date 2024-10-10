@@ -1,9 +1,14 @@
 fileFormatVersion: 2
-guid: ffd98a74e9ad5fa41a4231438b4f9424
+guid: 840141149c0859e48991c2bc0c373c62
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: standardSurface1
+    second: {fileID: 2100000, guid: 4cf732e842efade48b5725c71dedac25, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -32,19 +37,19 @@ ModelImporter:
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations: []
-    isReadable: 1
+    isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 3
+    globalScale: 3.6
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
-    sortHierarchyByName: 0
+    sortHierarchyByName: 1
     importPhysicalCameras: 1
     importVisibility: 1
     importBlendShapes: 1
-    importCameras: 0
-    importLights: 0
+    importCameras: 1
+    importLights: 1
     nodeNameCollisionStrategy: 1
     fileIdsGeneration: 2
     swapUVChannels: 0
@@ -90,7 +95,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 3
+    globalScale: 3.6
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0

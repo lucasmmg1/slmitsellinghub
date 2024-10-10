@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 7209564548204617228}
   - component: {fileID: 7959158117634943163}
   - component: {fileID: 8137891228277122267}
-  m_Layer: 0
+  - component: {fileID: 5561846184687243121}
+  m_Layer: 9
   m_Name: seguranca-pf_paredeportao
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -83,3 +84,25 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &5561846184687243121
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7838307531483258689}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -1364087873485794358, guid: dd8ec2abd306b744690c0ebfa1c68104, type: 3}

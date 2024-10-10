@@ -27,6 +27,7 @@ public class ChecarEquipamentosDeSeguranca : QuestView
         } while (vestuarios.Any(vestuario => vestuario.activeSelf));
         
         Status = QuestStatus.Completed;
+        Debug.Log("complete");
     }
 
     #endregion

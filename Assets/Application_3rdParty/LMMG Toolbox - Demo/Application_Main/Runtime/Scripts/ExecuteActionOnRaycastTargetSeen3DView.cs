@@ -62,7 +62,7 @@ public class ExecuteActionOnRaycastTargetSeen3DView : MonoBehaviour
         {
             case RaycastType.Line:
                 Gizmos.DrawRay(raycastOrigin.position,
-                    transform.GetTransformDirection(raycastDirection) * maxRaycastDistance);
+                    raycastOrigin.transform.GetTransformDirection(raycastDirection) * maxRaycastDistance);
                 break;
 
             case RaycastType.Box:
@@ -128,7 +128,7 @@ public class ExecuteActionOnRaycastTargetSeen3DView : MonoBehaviour
         return Physics.RaycastAll
         (
             raycastOrigin.position,
-            transform.GetTransformDirection(raycastDirection),
+            raycastOrigin.transform.GetTransformDirection(raycastDirection),
             maxRaycastDistance,
             layerMaskToCheckForRaycastTarget,
             queryTriggerInteraction
@@ -138,10 +138,10 @@ public class ExecuteActionOnRaycastTargetSeen3DView : MonoBehaviour
     {
         return Physics.BoxCastAll
         (
-            new Vector3(raycastOrigin.position.x + boxcastSize.x / 2 * transform.GetTransformDirection(raycastDirection).x, raycastOrigin.position.y, raycastOrigin.position.z + boxcastSize.z / 2 * transform.GetTransformDirection(raycastDirection).z),
+            new Vector3(raycastOrigin.position.x + boxcastSize.x / 2 * transform.GetTransformDirection(raycastDirection).x, raycastOrigin.position.y, raycastOrigin.position.z + boxcastSize.z / 2 * raycastOrigin.transform.GetTransformDirection(raycastDirection).z),
             boxcastSize / 2f, 
-            transform.GetTransformDirection(raycastDirection),
-            transform.rotation, 
+            raycastOrigin.transform.GetTransformDirection(raycastDirection),
+            raycastOrigin.transform.rotation, 
             1, 
             layerMaskToCheckForRaycastTarget, 
             queryTriggerInteraction

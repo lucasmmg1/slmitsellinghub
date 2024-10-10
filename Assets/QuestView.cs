@@ -7,7 +7,7 @@ public abstract class QuestView : MonoBehaviour
 
     #region Public Variables
 
-    public QuestStatus Status {get; set;}
+    public QuestStatus Status { get; set; } = QuestStatus.NotStarted;
 
     #endregion
 

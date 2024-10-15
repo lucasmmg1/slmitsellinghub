@@ -4,7 +4,6 @@ using NaughtyAttributes;
 
 namespace HPhysic
 {
-    [RequireComponent(typeof(Rigidbody))]
     public class Connector : MonoBehaviour
     {
         public enum ConType { Male, Female }
@@ -12,6 +11,7 @@ namespace HPhysic
 
         [field: Header("Settings")]
 
+        [field: SerializeField] public Rigidbody Rigidbody { get; private set; }
         [field: SerializeField] public ConType ConnectionType { get; private set; } = ConType.Male;
         [field: SerializeField, OnValueChanged(nameof(UpdateConnectorColor))] public CableColor ConnectionColor { get; private set; } = CableColor.White;
 
@@ -31,7 +31,6 @@ namespace HPhysic
 
 
         private FixedJoint _fixedJoint;
-        public Rigidbody Rigidbody { get; private set; }
 
         public Vector3 ConnectionPosition => connectionPoint ? connectionPoint.position : transform.position;
         public Quaternion ConnectionRotation => connectionPoint ? connectionPoint.rotation : transform.rotation;
@@ -45,7 +44,8 @@ namespace HPhysic
 
         private void Awake()
         {
-            Rigidbody = gameObject.GetComponent<Rigidbody>();
+            if (Rigidbody == null)
+                Rigidbody = gameObject.GetComponent<Rigidbody>();
         }
 
         private void Start()

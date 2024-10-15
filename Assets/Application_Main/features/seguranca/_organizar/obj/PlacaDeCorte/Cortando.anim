@@ -79,7 +79,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: blendShape.blendShape1.Corte_Meio1
-    path: Corte_Meio
+    path: Placa_Cortada/Corte_Meio
     classID: 137
     script: {fileID: 0}
     flags: 0
@@ -109,7 +109,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: material._Pos_Corte.x
-    path: Corte_Meio
+    path: Placa_Cortada/Corte_Meio
     classID: 137
     script: {fileID: 0}
     flags: 16
@@ -175,7 +175,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: material._Pos_Corte.y
-    path: Corte_Meio
+    path: Placa_Cortada/Corte_Meio
     classID: 137
     script: {fileID: 0}
     flags: 16
@@ -205,7 +205,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: material._Pos_Corte.z
-    path: Corte_Meio
+    path: Placa_Cortada/Corte_Meio
     classID: 137
     script: {fileID: 0}
     flags: 16
@@ -235,7 +235,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: material._Pos_Corte.w
-    path: Corte_Meio
+    path: Placa_Cortada/Corte_Meio
     classID: 137
     script: {fileID: 0}
     flags: 16
@@ -265,7 +265,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: material._Pos_Corte.x
-    path: Lado_Dir
+    path: Placa_Cortada/Lado_Dir
     classID: 23
     script: {fileID: 0}
     flags: 16
@@ -367,7 +367,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: material._Pos_Corte.y
-    path: Lado_Dir
+    path: Placa_Cortada/Lado_Dir
     classID: 23
     script: {fileID: 0}
     flags: 16
@@ -397,7 +397,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: material._Pos_Corte.z
-    path: Lado_Dir
+    path: Placa_Cortada/Lado_Dir
     classID: 23
     script: {fileID: 0}
     flags: 16
@@ -427,7 +427,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: material._Pos_Corte.w
-    path: Lado_Dir
+    path: Placa_Cortada/Lado_Dir
     classID: 23
     script: {fileID: 0}
     flags: 16
@@ -457,7 +457,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: material._Pos_Corte.x
-    path: Lado_Esq
+    path: Placa_Cortada/Lado_Esq
     classID: 23
     script: {fileID: 0}
     flags: 16
@@ -559,7 +559,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: material._Pos_Corte.y
-    path: Lado_Esq
+    path: Placa_Cortada/Lado_Esq
     classID: 23
     script: {fileID: 0}
     flags: 16
@@ -589,7 +589,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: material._Pos_Corte.z
-    path: Lado_Esq
+    path: Placa_Cortada/Lado_Esq
     classID: 23
     script: {fileID: 0}
     flags: 16
@@ -619,7 +619,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: material._Pos_Corte.w
-    path: Lado_Esq
+    path: Placa_Cortada/Lado_Esq
     classID: 23
     script: {fileID: 0}
     flags: 16
@@ -667,7 +667,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: material._Liga_Desliga
-    path: Lado_Esq
+    path: Placa_Cortada/Lado_Esq
     classID: 23
     script: {fileID: 0}
     flags: 16
@@ -715,7 +715,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: material._Liga_Desliga
-    path: Lado_Dir
+    path: Placa_Cortada/Lado_Dir
     classID: 23
     script: {fileID: 0}
     flags: 16
@@ -763,7 +763,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: material._Liga_Desliga
-    path: Corte_Meio
+    path: Placa_Cortada/Corte_Meio
     classID: 137
     script: {fileID: 0}
     flags: 16
@@ -811,7 +811,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_IsActive
-    path: Corte_Meio
+    path: Placa_Cortada/Corte_Meio
     classID: 1
     script: {fileID: 0}
     flags: 16
@@ -850,7 +850,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: material._power
-    path: Lado_Dir
+    path: Placa_Cortada/Lado_Dir
     classID: 23
     script: {fileID: 0}
     flags: 16
@@ -889,7 +889,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: material._power
-    path: Lado_Esq
+    path: Placa_Cortada/Lado_Esq
     classID: 23
     script: {fileID: 0}
     flags: 16
@@ -1156,7 +1156,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: blendShape.blendShape1.Corte_Meio1
-    path: Corte_Meio
+    path: Placa_Cortada/Corte_Meio
     classID: 137
     script: {fileID: 0}
     flags: 0
@@ -1186,7 +1186,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: material._Pos_Corte.x
-    path: Corte_Meio
+    path: Placa_Cortada/Corte_Meio
     classID: 137
     script: {fileID: 0}
     flags: 16
@@ -1252,7 +1252,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: material._Pos_Corte.y
-    path: Corte_Meio
+    path: Placa_Cortada/Corte_Meio
     classID: 137
     script: {fileID: 0}
     flags: 16
@@ -1282,7 +1282,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: material._Pos_Corte.z
-    path: Corte_Meio
+    path: Placa_Cortada/Corte_Meio
     classID: 137
     script: {fileID: 0}
     flags: 16
@@ -1312,7 +1312,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: material._Pos_Corte.w
-    path: Corte_Meio
+    path: Placa_Cortada/Corte_Meio
     classID: 137
     script: {fileID: 0}
     flags: 16
@@ -1342,7 +1342,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: material._Pos_Corte.x
-    path: Lado_Dir
+    path: Placa_Cortada/Lado_Dir
     classID: 23
     script: {fileID: 0}
     flags: 16
@@ -1444,7 +1444,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: material._Pos_Corte.y
-    path: Lado_Dir
+    path: Placa_Cortada/Lado_Dir
     classID: 23
     script: {fileID: 0}
     flags: 16
@@ -1474,7 +1474,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: material._Pos_Corte.z
-    path: Lado_Dir
+    path: Placa_Cortada/Lado_Dir
     classID: 23
     script: {fileID: 0}
     flags: 16
@@ -1504,7 +1504,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: material._Pos_Corte.w
-    path: Lado_Dir
+    path: Placa_Cortada/Lado_Dir
     classID: 23
     script: {fileID: 0}
     flags: 16
@@ -1534,7 +1534,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: material._Pos_Corte.x
-    path: Lado_Esq
+    path: Placa_Cortada/Lado_Esq
     classID: 23
     script: {fileID: 0}
     flags: 16
@@ -1636,7 +1636,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: material._Pos_Corte.y
-    path: Lado_Esq
+    path: Placa_Cortada/Lado_Esq
     classID: 23
     script: {fileID: 0}
     flags: 16
@@ -1666,7 +1666,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: material._Pos_Corte.z
-    path: Lado_Esq
+    path: Placa_Cortada/Lado_Esq
     classID: 23
     script: {fileID: 0}
     flags: 16
@@ -1696,7 +1696,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: material._Pos_Corte.w
-    path: Lado_Esq
+    path: Placa_Cortada/Lado_Esq
     classID: 23
     script: {fileID: 0}
     flags: 16
@@ -1744,7 +1744,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: material._Liga_Desliga
-    path: Lado_Esq
+    path: Placa_Cortada/Lado_Esq
     classID: 23
     script: {fileID: 0}
     flags: 16
@@ -1792,7 +1792,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: material._Liga_Desliga
-    path: Lado_Dir
+    path: Placa_Cortada/Lado_Dir
     classID: 23
     script: {fileID: 0}
     flags: 16
@@ -1840,7 +1840,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: material._Liga_Desliga
-    path: Corte_Meio
+    path: Placa_Cortada/Corte_Meio
     classID: 137
     script: {fileID: 0}
     flags: 16
@@ -1888,7 +1888,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_IsActive
-    path: Corte_Meio
+    path: Placa_Cortada/Corte_Meio
     classID: 1
     script: {fileID: 0}
     flags: 16
@@ -1927,7 +1927,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: material._power
-    path: Lado_Dir
+    path: Placa_Cortada/Lado_Dir
     classID: 23
     script: {fileID: 0}
     flags: 16
@@ -1966,7 +1966,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: material._power
-    path: Lado_Esq
+    path: Placa_Cortada/Lado_Esq
     classID: 23
     script: {fileID: 0}
     flags: 16

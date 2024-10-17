@@ -22,7 +22,7 @@ namespace HiscomEngine.Runtime.Scripts.Patterns.MMVCC.Controllers
 
         protected void Start()
         {
-            ChangeCursorVisibility(false);
+            ChangeCursorVisibility();
         }
 
         #endregion
@@ -33,9 +33,9 @@ namespace HiscomEngine.Runtime.Scripts.Patterns.MMVCC.Controllers
         /// Changes the cursor visibility.
         /// </summary>
         /// <param name="isVisible"> The visibility boolean value to use </param>
-        public void ChangeCursorVisibility(bool isVisible)
+        public void ChangeCursorVisibility(bool isVisible = false)
         {
-            Cursor.visible = true;
+            Cursor.visible = isVisible;
             Cursor.lockState = isVisible ? CursorLockMode.None : cursorLockMode;
             Cursor.SetCursor (isVisible ? null : cursorIcon, Vector2.zero, isVisible ? CursorMode.Auto : CursorMode.ForceSoftware);
         }

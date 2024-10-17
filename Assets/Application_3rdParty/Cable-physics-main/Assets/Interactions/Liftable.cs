@@ -28,15 +28,15 @@ namespace HInteractions
             ObjectHolder = holder;
 
             // save layers
-            _defaultLayers.Clear();
-            foreach (Collider col in gameObject.GetComponentsInChildren<Collider>())
-                _defaultLayers.Add((col.gameObject, col.gameObject.layer));
+            //_defaultLayers.Clear();
+            //foreach (Collider col in gameObject.GetComponentsInChildren<Collider>())
+            //    _defaultLayers.Add((col.gameObject, col.gameObject.layer));
 
             // set
             Rigidbody.useGravity = false;
             Rigidbody.interpolation = RigidbodyInterpolation.Interpolate;
-            foreach ((GameObject obj, int defaultLayer) item in _defaultLayers)
-                item.obj.layer = layer;
+            //foreach ((GameObject obj, int defaultLayer) item in _defaultLayers)
+            //    item.obj.layer = layer;
 
             IsLift = true;
         }
@@ -49,8 +49,8 @@ namespace HInteractions
             Rigidbody.isKinematic = true;
             Rigidbody.useGravity = true;
             Rigidbody.interpolation = RigidbodyInterpolation.None;
-            foreach ((GameObject obj, int defaultLayer) item in _defaultLayers)
-                item.obj.layer = item.defaultLayer;
+            //foreach ((GameObject obj, int defaultLayer) item in _defaultLayers)
+            //    item.obj.layer = item.defaultLayer;
             Rigidbody.isKinematic = false;
             IsLift = false;
         }

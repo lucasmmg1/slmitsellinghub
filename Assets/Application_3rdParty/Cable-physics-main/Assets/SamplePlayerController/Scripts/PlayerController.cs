@@ -93,9 +93,6 @@ namespace HPlayer
         {
             SetMode(Mods.Default);
 
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
-
             yaw = transform.eulerAngles.y;
             pitch = playerCamera.transform.localEulerAngles.x;
         }

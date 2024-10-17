@@ -11,6 +11,7 @@ TagManager:
   - mascara_pff2
   - botas
   - avental
+  - macarico
   layers:
   - Default
   - TransparentFX

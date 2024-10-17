@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3153896473700372243}
   - component: {fileID: 6552389026053358503}
   - component: {fileID: 7240951920173002979}
-  m_Layer: 22
+  m_Layer: 0
   m_Name: seguranca-pf_macarico
   m_TagString: Untagged
   m_Icon: {fileID: 0}

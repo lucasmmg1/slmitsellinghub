@@ -8,7 +8,7 @@ public class ChecarEquipamentosDeSeguranca : QuestView
 
     #region Protected Variables
 
-    [SerializeField] protected GameObject[] vestuarios;
+    [SerializeField] protected OutlineObjectEffectView[] vestuarios;
 
     #endregion
 
@@ -16,15 +16,25 @@ public class ChecarEquipamentosDeSeguranca : QuestView
 
     #region Methods
 
-    #region Public Methods
+    #region Protected Methods
 
+    protected void Start()
+    {
+        foreach (var vestuario in vestuarios)
+            vestuario.StartFeedback();
+    }
+
+    #endregion
+    
+    #region Public Methods
+    
     public override IEnumerator Quest()
     {
         do
         {
             Status = QuestStatus.InProgress;
             yield return new WaitForEndOfFrame();
-        } while (vestuarios.Any(vestuario => vestuario.activeSelf));
+        } while (vestuarios.Any(vestuario => vestuario.gameObject.activeSelf));
         
         Status = QuestStatus.Completed;
         Debug.Log("complete");
